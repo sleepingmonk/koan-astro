@@ -1,0 +1,19 @@
+---
+import "./Cards.css"
+
+interface Props {
+  variant?: string;
+  cardWidth?: string;
+}
+
+const { variant, cardWidth = '60ch' } = Astro.props;
+const classes = `cards switcher cards--${variant}`;
+const cardsAttributes = {
+  class: classes,
+  style: `--measure: ${cardWidth}; font-size: var(--s0);`,
+};
+---
+
+<div { ...cardsAttributes}>
+  <slot />
+</div>

@@ -1,0 +1,29 @@
+---
+import "./Footer.css";
+import Logo from '../../Atoms/Logo/Logo.astro';
+import NavItem from '../../Atoms/NavItem/NavItem.astro';
+
+interface Props {
+  variant?: string;
+  measure?: string;
+}
+
+const { variant = "default", measure = "50ch"} = Astro.props;
+const classes = `footer footer--${variant} box`;
+---
+
+<div class={classes} style=`--measure: ${measure}`>
+  <div class="grid">
+    <Logo variant="default" />
+    <ul class="grid">
+      <NavItem uri="https://sleepingmonk.github.io/koan" label="Documentation" external={true}/>
+      <NavItem uri="https://bionic.studio" label="Bionic Studio" external={true}/>
+    </ul>
+    <div>
+      <p>Bionic Studio is a division of Bionic Entrepreneur Incorporated.</p>
+      <p>All words, images and media are the property of Bionic Entrepreneur Incorporated, unless otherwise noted.</p>
+      <p>&copy; 2006 - {new Date().getFullYear()} Bionic Entrepreneur Incorporated. All rights reserved.</p>
+      <p><small>Stock images provided by <a href="https://unsplash.com/">Unsplash</a></small></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+---
+import iconsUrl from "../../../assets/icons.svg?url";
+import "./Logo.css";
+
+interface Props {
+  variant?: string;
+  color?: string;
+  height?: string;
+  logoPath?: string;
+}
+
+const { variant = "default", color = "default", height="s4", logoPath = iconsUrl } = Astro.props;
+const classes = `logo logo--${variant} logo--color-${color}`;
+
+---
+
+<div class={classes} style=`--height: var(--${height});`>
+  <div class="logo__logo">
+    <svg viewBox="0 0 100 50" class="icon">
+      <use xlink:href={`${logoPath}#logo-koan`}></use>
+    </svg>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.header--small,
+.header--overlay-small {
+  padding-block: var(--s0);
+}
+
+.header--overlay,
+.header--overlay-small {
+  padding-inline: 0;
+  padding-block-start: 0;
+}
+
+.header a {
+  text-decoration: none;
+}

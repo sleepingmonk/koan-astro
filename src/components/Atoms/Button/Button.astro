@@ -1,0 +1,26 @@
+---
+/**
+ * type: primary | secondary | text
+ * size: normal | small | large
+ */
+
+import "./Button.css";
+
+interface Props {
+  label?: string;
+  href: string;
+  type?: string;
+  size?: string;
+  external?: boolean;
+}
+
+const { label, href, type = 'primary', size = 'normal', external = false} = Astro.props;
+const variant_type = `button--${type}`;
+const variant_size = `button--${size}`;
+const classes = `button ${variant_type} ${variant_size}`;
+const target = external ? '_blank' : '_self';
+---
+
+{href && label ? (
+  <a href={href} {target} class={classes}>{label}</a>
+) : null}

@@ -1,0 +1,124 @@
+.section {
+  --color: var(--color-dark);
+  --heading-color: var(--color-primary-dark-x);
+  --button-fg: var(--accent-color);
+  --button-bg: var(--bg-color);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "hero";
+  overflow: hidden;
+  background: var(--bg-color);
+  font-size: var(--s1);
+  line-height: var(--s2);
+  font-weight: 300;
+}
+
+.section .cards,
+.section__main > .card {
+  font-size: var(--s0);
+  line-height: 1.3em;
+  font-weight: normal;
+  text-align: left;
+}
+
+.section > * {
+  grid-area: hero;
+  block-size: 100%;
+  padding-block: var(--s3);
+}
+
+.section__image {
+  background-image: var(--background-image);
+  background-position: center center;
+  background-size: cover;
+  block-size: 100%;
+}
+
+.section__tint {
+  background-color: var(--bg-color);
+  opacity: 0.85;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.section > * > .center {
+  --align-items: center;
+}
+
+.section .section__main > * {
+  inline-size: 100%;
+}
+
+.section .section__header h1,
+.section .section__header h2 {
+  color: var(--heading-color);
+}
+
+.section.section--align-center .section__header h1,
+.section.section--align-center .section__header h2,
+.section.section--align-center .section__header .brow {
+  text-align: center;
+  justify-content: center;
+}
+
+.section .section__header .brow {
+  color: var(--accent-color);
+  border-color: var(--color);
+}
+
+.section .section__tint ~ .section__content {
+  z-index: 1;
+  text-shadow:
+    1px 1px 3px var(--bg-color),
+    -1px -1px 3px var(--bg-color);
+}
+
+/* Variants */
+.section--color-default,
+.section--color-light {
+  --bg-color: var(--color-light);
+  --color: var(--color-dark);
+  --accent-color: var(--color-secondary);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-dark {
+  --bg-color: var(--color-dark);
+  --color: var(--color-light);
+  --accent-color: var(--color-accent);
+  --heading-color: var(--color-light);
+}
+
+.section--color-base {
+  --bg-color: var(--color-base);
+  --color: var(--color-dark);
+  --accent-color: var(--color-light);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-accent {
+  --bg-color: var(--color-accent);
+  --color: var(--color-light);
+  --accent-color: var(--color-dark);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-secondary {
+  --bg-color: var(--color-secondary);
+  --color: var(--color-light);
+  --accent-color: var(--color-dark);
+  --heading-color: var(--color-dark);
+}
+
+/* Drop padding when two sections of the same background are touching. */
+.section--color-default + .section--color-default > *,
+.section--color-default + .section--color-light > *,
+.section--color-light + .section--color-default > *,
+.section--color-light + .section--color-light > *,
+.section--color-dark + .section--color-dark > *,
+.section--color-base + .section--color-base > *,
+.section--color-accent + .section--accent > *,
+.section--color-secondary + .section--secondary > * {
+    padding-top: 0;
+}

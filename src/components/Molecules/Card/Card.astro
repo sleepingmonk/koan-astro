@@ -1,0 +1,78 @@
+---
+import './Card.css';
+import type { HTMLTag } from 'astro/types';
+import Button from '../../Atoms/Button/Button.astro';
+
+interface Props {
+  variant?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
+  buttonExternal?: boolean;
+  heading?: string;
+  h?: HTMLTag;
+  bgImage?: string;
+  icon?: string;
+}
+
+const { variant, buttonHref = "", buttonLabel = "", buttonExternal = false, heading = "", h: Hlevel = "h3", bgImage = "", icon = ""} = Astro.props;
+
+const iconPath = icon ? `/sprites/icons.svg#${icon}` : "";
+
+const CardTag = variant == 'icon' ? 'a' : 'div';
+const cardProperties = variant == "icon" ? {
+  href: buttonHref
+} : {};
+const backgroundProperties = {
+  class: "card__background",
+  style: `--background-image: url(${bgImage});`
+}
+const variant_class = variant ? `card--${variant}` : 'card--default';
+const classes = `card ${variant_class}`;
+---
+
+<CardTag class={classes} { ...cardProperties } title={buttonLabel}>
+  <div class="switcher">
+    {variant?.includes("icon") && icon ? (
+      <div class="card__icon">
+        <svg viewBox="0 0 100 100" class="icon">
+          <use xlink:href={iconPath}></use>
+        </svg>
+      </div>
+    ) : null}
+    {variant?.includes("media") ? (
+      <div class="card__media">
+        <div class="frame">
+          <slot name="media" />
+        </div>
+        <div class="card__media-caption caption">
+          <slot name="media-caption" />
+        </div>
+      </div>
+    ) : null}
+    {variant?.includes("overlay") ? (
+      <div { ...backgroundProperties }></div>
+      <div class="card__tint"></div>
+    ) : null}
+    <div class="card__main box stack center">
+      {heading ? (
+        <div class="card__heading">
+          <Hlevel>{heading}</Hlevel>
+        </div>
+      ) : null}
+      <div class="card__content">
+        <slot />
+      </div>
+      {variant !== "icon" && buttonHref ? (
+        <div class="card__button">
+          <Button
+            label={buttonLabel}
+            href={buttonHref}
+            external={buttonExternal}
+            type="secondary"
+            size="small"
+          />
+        </div>
+      ) : null}
+    </div>
+  </div>
+</CardTag>

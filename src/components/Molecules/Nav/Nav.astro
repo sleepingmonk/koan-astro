@@ -1,0 +1,17 @@
+---
+import "./Nav.css";
+import DropCluster from '../../Molecules/DropCluster/DropCluster.astro';
+
+interface Props {
+  variant?: string;
+}
+
+const { variant = "default" } = Astro.props;
+const classes = `nav nav--${variant}`;
+---
+
+<div class={classes}>
+  <DropCluster>
+    <slot />
+  </DropCluster>
+</div>

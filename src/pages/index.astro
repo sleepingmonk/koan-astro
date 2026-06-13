@@ -1,0 +1,194 @@
+---
+import '../styles/layout-primitives.css';
+import '../styles/scheme-default.css';
+import '../styles/elements.css';
+import { Button, Card, Footer, Header, Nav, NavItem, Section } from '../index';
+import heroImage from '../assets/image.jpg?url';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>koan playground</title>
+  </head>
+  <body>
+    <main class="main">
+      <Section
+        bgColor="dark"
+      >
+        <Header variant="overlay" measure="100%">
+          <Nav>
+            <NavItem uri="https://sleepingmonk.github.io/koan/" label="Koan Homepage" external={true}/>
+            <NavItem uri="https://bionic.studio" label="Bionic Studio" external={true}/>
+          </Nav>
+        </Header>
+      </Section>
+
+      <Section
+        heading="Koan for Astro"
+        level="1"
+        bgImage={heroImage}
+        bgColor="accent"
+      >
+        <div class="center" style="display: flex; justify-content: center; align-items: center;">
+          <Card
+            variant="bordered-center"
+          >
+            <p>To use Koan in your astro project:</p>
+            <p><code>npm install koan-astro</code></p>
+          </Card>
+        </div>
+      </Section>
+      <Section
+        brow="Brow"
+        heading="Heading"
+        level="2"
+        bgColor="light"
+      >
+        <div class="container stack">
+          <h2>Buttons</h2>
+          <div class="cluster">
+            <Button
+              label="Default Large"
+              href="#"
+              type="default"
+              size="large"
+              external={false}
+            />
+            <Button
+              label="Primary Large"
+              href="#"
+              type="primary"
+              size="large"
+              external={false}
+            />
+            <Button
+              label="Secondary Large"
+              href="#"
+              type="secondary"
+              size="large"
+              external={false}
+            />
+            <Button
+              label="Text Large"
+              href="#"
+              type="text"
+              size="large"
+              external={false}
+            />
+          </div>
+          <div class="cluster">
+            <Button
+              label="Default"
+              href="#"
+              type="default"
+              size="default"
+              external={false}
+            />
+            <Button
+              label="Primary"
+              href="#"
+              type="primary"
+              size="default"
+              external={false}
+            />
+            <Button
+              label="Secondary"
+              href="#"
+              type="secondary"
+              size="default"
+              external={false}
+            />
+            <Button
+              label="Text"
+              href="#"
+              type="text"
+              size="default"
+              external={false}
+            />
+          </div>
+          <div class="cluster">
+            <Button
+              label="Default Small"
+              href="#"
+              type="default"
+              size="small"
+              external={false}
+            />
+            <Button
+              label="Primary Small"
+              href="#"
+              type="primary"
+              size="small"
+              external={false}
+            />
+            <Button
+              label="Secondary Small"
+              href="#"
+              type="secondary"
+              size="small"
+              external={false}
+            />
+            <Button
+              label="Text Small"
+              href="#"
+              type="text"
+              size="small"
+              external={false}
+            />
+          </div>
+        </div>
+        <div class="container stack">
+          <h2>Cards</h2>
+          <div class="grid" style="--grid-min-width: 20ch; --bg-color: var(--color-dark);">
+            <Card
+              variant="media"
+              heading="Media"
+            >
+              <img src={heroImage} alt="Example image" slot="media" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+            <Card
+              variant="overlay"
+              heading="Overlay"
+              bgImage={heroImage}
+            >
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+            <Card
+              variant="bordered"
+              heading="Bordered"
+            >
+              <img src={heroImage} alt="Example image" slot="media" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+            <Card
+              variant="bordered-center"
+              heading="Bordered Center"
+            >
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+          </div>
+          <div class="">
+            <Card
+              variant="media-right"
+              heading="Media Right"
+            >
+              <img src={heroImage} alt="Example image" slot="media" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+            <Card
+              variant="media-left"
+              heading="Media Left"
+            >
+              <img src={heroImage} alt="Example image" slot="media" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>
+            </Card>
+          </div>
+        </div>
+      </Section>
+      <Footer />
+    </main>
+  </body>
+</html>

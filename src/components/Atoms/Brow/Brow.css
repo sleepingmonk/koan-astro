@@ -1,0 +1,10 @@
+.brow {
+  display: flex;
+  gap: var(--gap, var(--s0));
+}
+
+.brow .brow__accent {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}

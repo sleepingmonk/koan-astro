@@ -1,0 +1,18 @@
+---
+/**
+ * variant: default
+ */
+
+ import "./Brow.css";
+
+interface Props {
+  variant?: string;
+}
+
+const { variant = "default" } = Astro.props;
+const variant_type = `brow--${variant}`;
+const classes = `brow ${variant_type}`;
+---
+<div class={classes}>
+  <slot />
+</div>

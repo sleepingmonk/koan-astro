@@ -1,0 +1,84 @@
+/* Import Fonts */
+@font-face {
+  font-family: 'Zen Kaku Gothic Antique';
+  font-style: 'normal';
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  font-style: 'normal';
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.ttf) format('truetype');
+}
+
+/* Variables. */
+:root {
+
+  --ratio: 1.30;
+  --s-6: calc(var(--s-5) / var(--ratio));
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 0.84rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  --s7: calc(var(--s6) * var(--ratio));
+
+  --measure: 60ch;
+  --max-width: 126ch;
+  --min-width: 40ch;
+
+  --font-primary: 'Zen Kaku Gothic Antique', sans-serif;
+  --font-secondary: 'Zen Maru Gothic', sans-serif;
+
+  --color-light: #F9FAF9;
+  --color-dark: #1A1A1A;
+
+  --color-base-dark-xx: #404040;
+  --color-base-dark-x:  #707070;
+  --color-base: #B0B0B0;
+  --color-base-light-x:  #E0E0E0;
+  --color-base-light-xx:  #F2F2F2;
+
+  --color-primary-dark-xx: #2D3A80;
+  --color-primary-dark-x: #4455AA;
+  --color-primary: #6677CC;
+  --color-primary-light-x: #C5CEEC;
+  --color-primary-light-xx: #E9ECF8;
+
+  --color-accent-dark-xx: #805819;
+  --color-accent-dark-x: #B97F25;
+  --color-accent: #E6A93C;
+  --color-accent-light-x: #FFD999;
+  --color-accent-light-xx: #FFF3E0;
+
+  /* Contextual variable: can be overridden at the component level to affect accent elements within. */
+
+  --bg: var(--color-light);
+  --heading-color: var(--color-primary-dark-xx);
+  --accent-color: var(--color-primary-dark-x);
+  --color: var(--color-dark);
+  --button-fg: var(--bg);
+  --button-bg: var(--accent-color);
+  --border-thin: 1px;
+  --border-normal: 2px;
+}
+
+/* The only media query used simply bumps the base size of our modular scale for larger screens. */
+
+@media screen and (min-width: 720px) {
+  :root {
+    --s0: 1rem;
+  }
+}
+

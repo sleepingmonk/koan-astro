@@ -1,0 +1,51 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  block-size: var(--height);
+
+}
+
+.logo--color-default {
+  color: var(--color);
+}
+
+.logo--color-light {
+  color: var(--color-light);
+}
+
+.logo--color-dark {
+  color: var(--color-dark);
+}
+
+.logo--color-base {
+  color: var(--color-base);
+}
+
+.logo--color-accent {
+  color: var(--color-accent);
+}
+
+.logo--color-secondary {
+  color: var(--color-secondary);
+}
+
+.logo > * {
+  flex: 0 0 auto;
+  block-size: var(--height);
+}
+
+.logo svg {
+  block-size: var(--height);
+  inline-size: auto;
+}
+
+.logo__text {
+  font-family: var(--font-secondary);
+  font-size: calc(var(--height) / var(--ratio) / var(--ratio) / var(--ratio));
+  line-height: 1em;
+  text-transform: uppercase;
+  text-align: start;
+}

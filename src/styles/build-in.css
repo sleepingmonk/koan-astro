@@ -1,0 +1,120 @@
+.build-in {
+  opacity: 0;
+}
+
+.build-in--done {
+  opacity: 1;
+}
+
+.build-in--left.animate {
+  animation: build-in--left 1s ease-in-out forwards;
+}
+
+.build-in--right.animate {
+  animation: build-in--right 1s ease-in-out forwards;
+}
+
+.build-in--bottom.animate {
+  animation: build-in--bottom 1s ease-in-out forwards;
+}
+
+.build-in--top.animate {
+  animation: build-in--top 1s ease-in-out forwards;
+}
+
+@keyframes build-in--left {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, 2, .2, 60deg) translateX(-80%);
+    border: 1px dashed var(--color-dark);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate3d(0, 2, .2, 0deg) translateX(5%);
+    border: 1px dashed var(--color-dark);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate3d(0, 2, 1, 0deg) translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  100% {
+    border: none;
+    margin: 0;
+  }
+}
+
+@keyframes build-in--right {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, -2, -.2, 60deg) translateX(80%);
+    border: 1px dashed var(--color-dark);
+
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotate3d(0, 2, .2, 0deg) translateX(-5%);
+    border: 1px dashed var(--color-dark);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate3d(0, 2, 1, 0deg) translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes build-in--bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+    border: 1px dashed var(--color-dark);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-5%);
+    border: 1px dashed var(--color-dark);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes build-in--top {
+  0% {
+    opacity: 0;
+    transform: rotate(10deg) translateY(-80%);
+    border: 1px dashed var(--color-dark);
+  }
+  40% {
+    opacity: 0.5;
+    transform: rotate(0deg) translateY(15%);
+    border: 1px dashed var(--color-dark);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-5deg) translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(3deg) translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  90% {
+    opacity: 1;
+    transform: rotate(-1deg) translateX(0);
+    border: 1px dashed var(--color-dark);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
+    border: 0;
+  }
+}

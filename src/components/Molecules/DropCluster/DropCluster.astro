@@ -1,0 +1,25 @@
+---
+import './DropCluster.css';
+
+interface Props {
+  variant?: 'default' | 'primary' | 'secondary';
+}
+
+const { variant }: Props = Astro.props;
+const variant_class = variant
+  ? `drop-cluster--${variant}`
+  : 'drop-cluster--default';
+const classes = `
+  drop-cluster
+  cluster
+  ${variant_class}
+`.trim();
+
+---
+
+<div class={classes}>
+  <input class="drop-cluster__toggle" type='checkbox' />
+  <ul class="cluster drop-cluster__items">
+    <slot />
+  </ul>
+</div>

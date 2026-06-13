@@ -1,0 +1,39 @@
+.cards {
+  --gap: var(--s2);
+}
+
+/* Icon Cards */
+.cards .card--icon,
+.cards .card--overlay {
+  --button-bg: var(--bg-color);
+  --button-fg: var(--accent-color);
+}
+
+/* Icon/overlay Card Variants */
+/* .cards .card--overlay:nth-of-type(4n + 1),
+.cards .card--icon:nth-of-type(4n + 1) {
+  --bg-color: var(--color-base);
+  --color: var(--color-light);
+  --accent-color: var(--color-light);
+}
+
+.cards .card--overlay:nth-of-type(4n + 2),
+.cards .card--icon:nth-of-type(4n + 2) {
+  --bg-color: var(--color-accent);
+  --color: var(--color-dark);
+  --accent-color: var(--color-dark);
+}
+
+.cards .card--overlay:nth-of-type(4n + 3),
+.cards .card--icon:nth-of-type(4n + 3) {
+  --bg-color: var(--color-secondary);
+  --color: var(--color-light);
+  --accent-color: var(--color-light);
+}
+
+.cards .card--overlay:nth-of-type(4n + 4),
+.cards .card--icon:nth-of-type(4n + 4) {
+  --bg-color: var(--color-dark);
+  --color: var(--color-light);
+  --accent-color: var(--color-accent);
+} */

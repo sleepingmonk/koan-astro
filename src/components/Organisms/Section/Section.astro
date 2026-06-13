@@ -1,0 +1,80 @@
+---
+interface Props {
+  justify?: string;
+  align?: string;
+  brow?: string;
+	heading?: string;
+  bgImage?: string;
+  bgColor?: string;
+  level?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
+  buttonExternal?: boolean;
+  className?: string;
+}
+
+import './Section.css';
+import Brow from "../../Atoms/Brow/Brow.astro";
+import Button from "../../Atoms/Button/Button.astro";
+
+const {
+  justify = "center",
+  align = "center",
+  brow,
+  heading,
+  bgImage,
+  bgColor,
+  level = "2",
+  buttonHref,
+  buttonLabel,
+  buttonExternal = false,
+  className
+} = Astro.props;
+const variant_justify = justify
+  ? `section--justify-${justify}`
+  : "section--justify-center";
+const variant_align = align
+  ? `section--align-${align}`
+  : "section--align-center";
+const variant_color = bgColor
+  ? `section--color-${bgColor}`
+  : "section--color-default";
+const Hlevel = "h" + level;
+const hAttributes = {
+  class: "section__heading"
+};
+
+const classes = `section ${variant_justify} ${variant_align} ${variant_color} ${className}`;
+---
+
+<div class={classes}>
+  {bgImage ? (
+    <div class="section__image" style={`--background-image: url(${bgImage});`}></div>
+    <div class="section__tint"></div>
+  ) : null}
+  <div class="section__content box stack">
+    <slot name="header" />
+    {brow || heading ? (
+      <div class="section__header center stack" style="--space: var(--s0):">
+        {brow ? (
+          <Brow>{brow}</Brow>
+        ) : null}
+       {heading ? (
+         <Hlevel { ...hAttributes }>{heading}</Hlevel>
+       ) : null}
+      </div>
+    ) : null}
+    <div class="section__main stack">
+      <slot />
+    </div>
+    {buttonHref ? (
+      <div class="section__button center">
+        <Button
+          label={buttonLabel}
+          href={buttonHref}
+          external={buttonExternal}
+        />
+      </div>
+    ) : null}
+  </div>
+</div>

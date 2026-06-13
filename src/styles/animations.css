@@ -1,0 +1,64 @@
+.bounce {
+  display: inline-block;
+  transform-origin: center bottom;
+  will-change: transform;
+  animation: bounce 1.6s infinite cubic-bezier(.28,.84,.42,1);
+}
+
+/* Bounce with small squash/stretch */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  30% {
+    transform: translateY(-18px) scaleY(1.05);
+  }
+  45% {
+    transform: translateY(0) scaleY(0.95);
+  }
+  60% {
+    transform: translateY(-8px) scaleY(1.02);
+  }
+}
+
+.levitate {
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform;
+  animation: levitate 6s ease-in-out infinite;
+  /* optional: make the element feel lighter */
+  backface-visibility: hidden;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.14));
+  }
+  25% {
+    transform: translateY(-6px) rotate(-0.4deg);
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.12));
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.6deg);
+    filter: drop-shadow(0 14px 18px rgba(0,0,0,0.10));
+  }
+  75% {
+    transform: translateY(-6px) rotate(-0.2deg);
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.12));
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.14));
+  }
+}
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .bounce {
+    animation: none;
+  }
+  .levitate {
+    animation: none;
+  }
+}

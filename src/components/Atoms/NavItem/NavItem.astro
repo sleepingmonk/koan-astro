@@ -1,0 +1,33 @@
+---
+import iconsUrl from "../../../assets/icons.svg?url";
+
+interface Props {
+  uri: string;
+  label: string;
+  external?: boolean;
+}
+
+// Helper function to normalize URLs
+function normalizeUrl(url: string): string {
+  return url.endsWith('/') ? url : `${url}/`;
+}
+
+const { uri, label, external = false } = Astro.props;
+const pathname = Astro.url.pathname;
+const normalizedPathname = normalizeUrl(pathname);
+const normalizedUri = normalizeUrl(uri);
+const isActive = normalizedPathname === normalizedUri;
+const classes = `nav-item ${isActive ? "active" : ""}`;
+const target = external ? "_blank" : "_self";
+---
+
+<li class={classes}>
+  <a href={uri} {target} aria-label={label}>{ label.includes("#") ? (
+      <svg height="1em" width="1em" style="vertical-align: middle;">
+        <use xlink:href={`${iconsUrl}${label}`}></use>
+      </svg>
+    ) : (
+      label
+    )
+  }</a>
+</li>

@@ -1,0 +1,45 @@
+button,
+a.button {
+  display: inline-block;
+  width: auto;
+  background-color: var(--button-bg, transparent);
+  padding: var(--s-1) var(--s2);
+  border: 2px solid var(--button-fg);
+  border-radius: var(--border-radius);
+  color: var(--button-fg);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: var(--s1);
+  line-height: var(--s1);
+  font-weight: 500;
+  letter-spacing: .01rem;
+}
+
+/* Button Variants */
+/* Size */
+button.button--small,
+a.button.button--small {
+  font-size: var(--s0);
+  padding: var(--s-2) var(--s1);
+}
+
+button.button--large,
+a.button.button--large {
+  font-size: var(--s2);
+  padding: var(--s0) var(--s2);
+}
+
+/* Type */
+button.button--secondary,
+a.button.button--secondary {
+  border-color: var(--button-bg);
+  background: var(--button-fg);
+  color: var(--button-bg);
+}
+
+button.button--text,
+a.button.button--text {
+  padding-left: 0;
+  border: 0;
+  background: transparent;
+}

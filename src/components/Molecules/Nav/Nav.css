@@ -1,0 +1,14 @@
+.nav .nav-item {
+  border-inline-start: var(--s-5) solid transparent;
+  padding-inline-start: var(--s-3);
+}
+
+.nav .nav-item.active {
+  border-inline-start: 2px solid var(--color-accent);
+}
+
+.nav .nav-item a {
+  color: var(--color);
+  text-decoration: none;
+  font-weight: 400;
+}

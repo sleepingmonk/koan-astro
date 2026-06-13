@@ -1,0 +1,38 @@
+{
+  "name": "koan-astro",
+  "version": "0.1.0",
+  "description": "Reusable Astro component templates.",
+  "type": "module",
+  "files": [
+    "src/index.ts",
+    "src/components",
+    "src/styles",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*",
+    "./styles/*": "./src/styles/*",
+    "./styles/layout-primitives.css": "./src/styles/layout-primitives.css",
+    "./styles/scheme-default.css": "./src/styles/scheme-default.css",
+    "./styles/animations.css": "./src/styles/animations.css",
+    "./styles/build-in.css": "./src/styles/build-in.css",
+    "./styles/elements.css": "./src/styles/elements.css",
+    "./styles/lighting.css": "./src/styles/lighting.css"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "prepack": "npm run check"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "astro": "^5.10.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9"
+  }
+}

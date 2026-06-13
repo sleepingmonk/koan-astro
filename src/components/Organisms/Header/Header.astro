@@ -1,0 +1,23 @@
+---
+import "./Header.css";
+import Logo from '../../Atoms/Logo/Logo.astro';
+
+interface Props {
+  variant?: string;
+  measure?: string;
+  logoHeight?: string;
+}
+
+const { variant = "default", measure = "30ch", logoHeight } = Astro.props;
+const classes = `header header--${variant} ${variant == "overlay" || variant == "overlay-small" ? "" : "box"}`;
+const adjustedLogoHeight = variant == "small" || variant == "overlay-small" ? "s2" : logoHeight;
+---
+
+<div class={classes}>
+  <div class="switcher" style=`--measure: ${measure}; align-items: center;`>
+    <div style="display: flex;">
+      <a href="/" aria-label="Home"><Logo height={adjustedLogoHeight} /></a>
+    </div>
+    <slot />
+  </div>
+</div>
