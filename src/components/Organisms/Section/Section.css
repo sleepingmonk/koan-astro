@@ -3,15 +3,17 @@
   --heading-color: var(--color-primary-dark-x);
   --button-fg: var(--accent-color);
   --button-bg: var(--bg-color);
+  --line-height: 1.5;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "hero";
   overflow: hidden;
-  background: var(--bg-color);
-  font-size: var(--s1);
-  line-height: var(--s2);
+  background-color: var(--bg-color);
   font-weight: 300;
+  font-size: var(--s0);
+  line-height: var(--line-height);
+  transition: all 300ms ease-in-out;
 }
 
 .section .cards,
@@ -29,15 +31,25 @@
 }
 
 .section__image {
-  background-image: var(--background-image);
-  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  background: var(--background-image) no-repeat center;
   background-size: cover;
+}
+
+.section__image img {
+  inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
+  position: absolute;
 }
 
 .section__tint {
   background-color: var(--bg-color);
-  opacity: 0.85;
+  opacity: 0.75;
   inline-size: 100%;
   block-size: 100%;
 }
@@ -46,8 +58,19 @@
   --align-items: center;
 }
 
-.section .section__main > * {
+.section__content {
+  z-index: 1;
+}
+
+.section__main {
   inline-size: 100%;
+}
+
+.section .section__header {
+  inline-size: 100%;
+  text-shadow:
+  2px 2px 3px var(--bg-color),
+  -2px -2px 3px var(--bg-color);
 }
 
 .section .section__header h1,
@@ -55,31 +78,37 @@
   color: var(--heading-color);
 }
 
-.section.section--align-center .section__header h1,
-.section.section--align-center .section__header h2,
-.section.section--align-center .section__header .brow {
-  text-align: center;
-  justify-content: center;
-}
-
 .section .section__header .brow {
   color: var(--accent-color);
   border-color: var(--color);
 }
 
-.section .section__tint ~ .section__content {
-  z-index: 1;
-  text-shadow:
-    1px 1px 3px var(--bg-color),
-    -1px -1px 3px var(--bg-color);
+.section a {
+  color: var(--color);
+  text-decoration: none;
 }
 
 /* Variants */
+
+.section--align-center .section__header,
+.section--align-center .section__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section--align-end .section__header,
+.section--align-end .section__button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .section--color-default,
 .section--color-light {
   --bg-color: var(--color-light);
   --color: var(--color-dark);
-  --accent-color: var(--color-secondary);
+  --accent-color: var(--color-primary);
   --heading-color: var(--color-dark);
 }
 
@@ -93,22 +122,106 @@
 .section--color-base {
   --bg-color: var(--color-base);
   --color: var(--color-dark);
-  --accent-color: var(--color-light);
+  --accent-color: var(--color-primary-dark-xx);
   --heading-color: var(--color-dark);
+}
+
+.section--color-base-light-x {
+  --bg-color: var(--color-base-light-x);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-x);
+  --heading-color: var(--color-base-dark-xx);
+}
+
+.section--color-base-light-xx {
+  --bg-color: var(--color-base-light-xx);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary);
+  --heading-color: var(--color-base-dark-x);
+}
+
+.section--color-base-dark-x {
+  --bg-color: var(--color-base-dark-x);
+  --color: var(--color-base-light-xx);
+  --accent-color: var(--color-accent);
+  --heading-color: var(--color-base-light-xx);
+}
+
+.section--color-base-dark-xx {
+  --bg-color: var(--color-base-dark-xx);
+  --color: var(--color-base-light-x);
+  --accent-color: var(--color-accent);
+  --heading-color: var(--color-base-light-x);
+}
+
+.section--color-primary {
+  --bg-color: var(--color-primary);
+  --color: var(--color-primary-light-xx);
+  --accent-color: var(--color-dark);
+  --heading-color: var(--color-primary-light-xx);
+}
+
+.section--color-primary-light-x {
+  --bg-color: var(--color-primary-light-x);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-xx);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-primary-light-xx {
+  --bg-color: var(--color-primary-light-xx);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-x);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-primary-dark-x {
+  --bg-color: var(--color-primary-dark-x);
+  --color: var(--color-primary-light-xx);
+  --accent-color: var(--color-accent);
+  --heading-color: var(--color-primary-light-xx);
+}
+
+.section--color-primary-dark-xx {
+  --bg-color: var(--color-primary-dark-xx);
+  --color: var(--color-primary-light-xx);
+  --accent-color: var(--color-accent);
+  --heading-color: var(--color-primary-light-xx);
 }
 
 .section--color-accent {
   --bg-color: var(--color-accent);
-  --color: var(--color-light);
-  --accent-color: var(--color-dark);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-xx);
   --heading-color: var(--color-dark);
 }
 
-.section--color-secondary {
-  --bg-color: var(--color-secondary);
-  --color: var(--color-light);
-  --accent-color: var(--color-dark);
+.section--color-accent-light-x {
+  --bg-color: var(--color-accent-light-x);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-xx);
   --heading-color: var(--color-dark);
+}
+
+.section--color-accent-light-xx {
+  --bg-color: var(--color-accent-light-xx);
+  --color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-x);
+  --heading-color: var(--color-dark);
+}
+
+.section--color-accent-dark-x {
+  --bg-color: var(--color-accent-dark-x);
+  --color: var(--color-light);
+  --accent-color: var(--color-accent-light-xx);
+  --heading-color: var(--color-light);
+}
+
+.section--color-accent-dark-xx {
+  --bg-color: var(--color-accent-dark-xx);
+  --color: var(--color-light);
+  --accent-color: var(--color-accent-light-x);
+  --heading-color: var(--color-light);
 }
 
 /* Drop padding when two sections of the same background are touching. */
@@ -118,7 +231,19 @@
 .section--color-light + .section--color-light > *,
 .section--color-dark + .section--color-dark > *,
 .section--color-base + .section--color-base > *,
+.section--color-base + .section--color-base-light-x > *,
+.section--color-base + .section--color-base-light-xx > *,
+.section--color-base + .section--color-base-dark-x > *,
+.section--color-base + .section--color-base-dark-xx > *,
+.section--color-primary + .section--primary > *,
+.section--color-primary + .section--primary-light-x > *,
+.section--color-primary + .section--primary-light-xx > *,
+.section--color-primary + .section--primary-dark-x > *,
+.section--color-primary + .section--primary-dark-xx > *,
 .section--color-accent + .section--accent > *,
-.section--color-secondary + .section--secondary > * {
-    padding-top: 0;
+.section--color-accent + .section--accent-light-x > *,
+.section--color-accent + .section--accent-light-xx > *,
+.section--color-accent + .section--accent-dark-x > *,
+.section--color-accent + .section--accent-dark-xx > * {
+  padding-top: 0;
 }

@@ -2,6 +2,7 @@
 import './Card.css';
 import type { HTMLTag } from 'astro/types';
 import Button from '../../Atoms/Button/Button.astro';
+import defaultIconsUrl from '../../../assets/icons.svg?url';
 
 interface Props {
   variant?: string;
@@ -12,11 +13,12 @@ interface Props {
   h?: HTMLTag;
   bgImage?: string;
   icon?: string;
+  iconsUrl?: string;
 }
 
-const { variant, buttonHref = "", buttonLabel = "", buttonExternal = false, heading = "", h: Hlevel = "h3", bgImage = "", icon = ""} = Astro.props;
+const { variant, buttonHref = "", buttonLabel = "", buttonExternal = false, heading = "", h: Hlevel = "h3", bgImage = "", icon = "", iconsUrl = defaultIconsUrl } = Astro.props;
 
-const iconPath = icon ? `/sprites/icons.svg#${icon}` : "";
+const iconPath = icon ? `${iconsUrl}#${icon}` : "";
 
 const CardTag = variant == 'icon' ? 'a' : 'div';
 const cardProperties = variant == "icon" ? {

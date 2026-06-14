@@ -52,29 +52,31 @@ const classes = `section ${variant_justify} ${variant_align} ${variant_color} ${
     <div class="section__image" style={`--background-image: url(${bgImage});`}></div>
     <div class="section__tint"></div>
   ) : null}
-  <div class="section__content box stack">
+  <div class="section__content box">
     <slot name="header" />
-    {brow || heading ? (
-      <div class="section__header center stack" style="--space: var(--s0):">
-        {brow ? (
-          <Brow>{brow}</Brow>
-        ) : null}
-       {heading ? (
-         <Hlevel { ...hAttributes }>{heading}</Hlevel>
-       ) : null}
+    <div class="container stack">
+      {brow || heading ? (
+        <div class="section__header">
+          {brow ? (
+            <Brow>{brow}</Brow>
+          ) : null}
+          {heading ? (
+            <Hlevel { ...hAttributes }>{heading}</Hlevel>
+          ) : null}
+        </div>
+      ) : null}
+      <div class="section__main stack">
+        <slot />
       </div>
-    ) : null}
-    <div class="section__main stack">
-      <slot />
+      {buttonHref ? (
+        <div class="section__button center">
+          <Button
+            label={buttonLabel}
+            href={buttonHref}
+            external={buttonExternal}
+          />
+        </div>
+      ) : null}
     </div>
-    {buttonHref ? (
-      <div class="section__button center">
-        <Button
-          label={buttonLabel}
-          href={buttonHref}
-          external={buttonExternal}
-        />
-      </div>
-    ) : null}
   </div>
 </div>

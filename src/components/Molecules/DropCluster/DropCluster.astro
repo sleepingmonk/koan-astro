@@ -18,8 +18,17 @@ const classes = `
 ---
 
 <div class={classes}>
-  <input class="drop-cluster__toggle" type='checkbox' />
-  <ul class="cluster drop-cluster__items">
-    <slot />
-  </ul>
+  <label>
+    <input class="drop-cluster__toggle" type='checkbox'>
+    <div class="drop-cluster__inner">
+      <div class="drop-cluster__button" aria-label="Open Menu">
+        <div class="drop-cluster__button-bar"></div>
+        <div class="drop-cluster__button-bar"></div>
+        <div class="drop-cluster__button-bar"></div>
+      </div>
+      <div class="cluster drop-cluster__items">
+        <slot />
+      </div>
+    </div>
+  </label>
 </div>

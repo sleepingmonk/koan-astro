@@ -1,7 +1,9 @@
 ---
 import "./Footer.css";
 import Logo from '../../Atoms/Logo/Logo.astro';
+import Nav from '../../Molecules/Nav/Nav.astro';
 import NavItem from '../../Atoms/NavItem/NavItem.astro';
+import Section from '../Section/Section.astro';
 
 interface Props {
   variant?: string;
@@ -9,16 +11,24 @@ interface Props {
 }
 
 const { variant = "default", measure = "50ch"} = Astro.props;
-const classes = `footer footer--${variant} box`;
+const classes = `footer footer--${variant}`;
 ---
 
-<div class={classes} style=`--measure: ${measure}`>
+<Section
+  className={classes}
+  justify="center"
+  align="center"
+  bgColor="dark"
+>
   <div class="grid">
     <Logo variant="default" />
-    <ul class="grid">
-      <NavItem uri="https://sleepingmonk.github.io/koan" label="Documentation" external={true}/>
-      <NavItem uri="https://bionic.studio" label="Bionic Studio" external={true}/>
-    </ul>
+    <div>
+      <div class="cluster">
+        <NavItem uri="https://sleepingmonk.github.io/koan" label="Documentation" external={true}/>
+        <NavItem uri="https://bionic.studio" label="Bionic Studio" external={true}/>
+        <NavItem uri="#" label="#home" />
+      </div>
+    </div>
     <div>
       <p>Bionic Studio is a division of Bionic Entrepreneur Incorporated.</p>
       <p>All words, images and media are the property of Bionic Entrepreneur Incorporated, unless otherwise noted.</p>
@@ -26,4 +36,4 @@ const classes = `footer footer--${variant} box`;
       <p><small>Stock images provided by <a href="https://unsplash.com/">Unsplash</a></small></p>
     </div>
   </div>
-</div>
+</Section>

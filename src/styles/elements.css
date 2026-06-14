@@ -72,6 +72,10 @@ code {
   text-shadow: none;
 }
 
+ul {
+  margin: 0;
+}
+
 .caption {
   font-size: var(--s-1);
   line-height: var(--s0);

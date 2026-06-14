@@ -1,3 +1,8 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav .nav-item {
   border-inline-start: var(--s-5) solid transparent;
   padding-inline-start: var(--s-3);
@@ -8,6 +13,8 @@
 }
 
 .nav .nav-item a {
+  display: flex;
+  align-items: center;
   color: var(--color);
   text-decoration: none;
   font-weight: 400;

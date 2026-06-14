@@ -1,17 +1,75 @@
 .drop-cluster {
   --gap: var(--s0);
+  --block-size: calc(var(--gap) * var(--ratio));
+}
+
+.drop-cluster__inner,
+.drop-cluster__inner.cluster {
+  display: flex;
   flex-wrap: nowrap;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: flex-start;
+  gap: var(--gap);
 }
 
-.drop-cluster > * {
-  height: calc(var(--gap) * var(--ratio));
+.drop-cluster__inner > * {
+  block-size: var(--block-size);
 }
 
-.drop-cluster__items {
-  align-items: flex-end;
+.drop-cluster__button {
+  position: relative;
+  inline-size: 24px;
+  block-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  margin-block: var(--gap);
+  overflow: hidden;
+
+  .drop-cluster__button-bar {
+    width: var(--block-size);
+    height: 2px;
+    background-color: var(--color);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drop-cluster__button-bar {
+    transition: all 500ms ease;
+  }
+}
+
+.drop-cluster__toggle[type=checkbox]:checked + .drop-cluster__inner {
+  .drop-cluster__button {
+    inline-size: 24px;
+    block-size: 24px;
+    justify-content: center;
+  }
+
+  .drop-cluster__button-bar {
+    position: absolute;
+    background-color: var(--color-accent);
+  }
+
+  .drop-cluster__button-bar:nth-child(1) {
+    transform: rotate(-135deg);
+  }
+
+  .drop-cluster__button-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .drop-cluster__button-bar:nth-child(3) {
+    transform: rotate(135deg);
+  }
+}
+
+.drop-cluster__items,
+.drop-cluster__items.cluster {
+  justify-content: flex-end;
   overflow: hidden;
   list-style: none;
   margin-block: var(--gap);
@@ -20,52 +78,32 @@
   position: relative;
 }
 
-.drop-cluster__items li {
+.drop-cluster__items > * {
   font-size: var(--gap);
   line-height: var(--gap);
   overflow-wrap: break-word;
 }
 
-.drop-cluster__items li a {
+.drop-cluster__items > * a {
   display: block;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .drop-cluster__toggle[type=checkbox] {
-  --icon-offsetx: 13px;
-  --icon-offsety: 12px;
+  position: absolute;
   display: block;
   visibility: hidden;
-  margin-block: var(--gap);
-  margin-inline-end: var(--icon-offsetx);
+  margin-block: auto;
   width: var(--gap);
   height: var(--gap);
   cursor: pointer;
 }
 
-.drop-cluster__toggle[type=checkbox] + ul li {
+.drop-cluster__toggle[type=checkbox] + .drop-cluster__inner .drop-cluster__items > * {
   line-height: calc(var(--gap) * var(--ratio));
 }
 
-.drop-cluster__toggle[type=checkbox]::before {
-  content: '\2630';
-  height: var(--gap);
-  width: var(--gap);
-  display: block;
-  visibility: visible;
-  font-size: calc(var(--gap) * var(--ratio));
-  line-height: var(--gap);
-  color: var(--color-base);
-  transition: all 500ms ease;
-  transform-origin: var(--icon-offsetx) var(--icon-offsety);
-}
-
-.drop-cluster__toggle[type=checkbox]:checked::before {
-  color: var(--color-secondary);
-  transform: rotate(-405deg);
-}
-
-.drop-cluster__toggle[type=checkbox]:checked + ul {
+.drop-cluster__toggle[type=checkbox]:checked + .drop-cluster__inner .drop-cluster__items {
   height: auto;
 }
