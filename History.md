@@ -1,4 +1,11 @@
 
+0.1.3 / 2026-06-14
+==================
+
+  * chore: Clear warnings and add tooling for prepack and publishing.
+
+  3 files changed, 5 insertions(+), 3 deletions(-)
+
 0.1.2 / 2026-06-14
 ==================
 
