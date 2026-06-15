@@ -11,6 +11,7 @@ interface Props {
   buttonLabel?: string;
   buttonExternal?: boolean;
   className?: string;
+  contentBox?: boolean;
 }
 
 import './Section.css';
@@ -28,8 +29,10 @@ const {
   buttonHref,
   buttonLabel,
   buttonExternal = false,
-  className
+  className,
+  contentBox = true
 } = Astro.props;
+
 const variant_justify = justify
   ? `section--justify-${justify}`
   : "section--justify-center";
@@ -52,7 +55,7 @@ const classes = `section ${variant_justify} ${variant_align} ${variant_color} ${
     <div class="section__image" style={`--background-image: url(${bgImage});`}></div>
     <div class="section__tint"></div>
   ) : null}
-  <div class="section__content box">
+  <div class={`section__content ${contentBox ? 'box' : ''}`}>
     <slot name="header" />
     <div class="container stack">
       {brow || heading ? (
