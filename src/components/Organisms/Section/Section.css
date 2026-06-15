@@ -27,7 +27,6 @@
 .section > * {
   grid-area: hero;
   block-size: 100%;
-  padding-block: var(--s3);
 }
 
 .section__image {
