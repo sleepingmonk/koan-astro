@@ -1,7 +1,6 @@
 ---
 import "./Footer.css";
 import Logo from '../../Atoms/Logo/Logo.astro';
-import Nav from '../../Molecules/Nav/Nav.astro';
 import NavItem from '../../Atoms/NavItem/NavItem.astro';
 import Section from '../Section/Section.astro';
 
@@ -10,7 +9,7 @@ interface Props {
   measure?: string;
 }
 
-const { variant = "default", measure = "50ch"} = Astro.props;
+const { variant = "default"} = Astro.props;
 const classes = `footer footer--${variant}`;
 ---
 

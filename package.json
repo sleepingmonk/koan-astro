@@ -24,8 +24,10 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "build": "astro build",
     "check": "astro check",
-    "prepack": "npm run check"
+    "prepack": "npm run check && npm run build",
+    "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  npm version [major|minor|patch]' && echo '  npm publish'"
   },
   "peerDependencies": {
     "astro": "^4.0.0 || ^5.0.0"
