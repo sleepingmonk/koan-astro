@@ -1,1 +1,1 @@
-export * from './jumpLinks';
+export { jumpLinks, initJumpLinks } from './jumpLinks.js';
