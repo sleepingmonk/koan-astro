@@ -4,6 +4,7 @@ import '../styles/scheme-default.css';
 import '../styles/elements.css';
 import { Button, Card, Footer, Header, Nav, NavItem, Section } from '../index';
 import heroImage from '../assets/image.jpg?url';
+
 ---
 
 <html lang="en">
@@ -13,7 +14,7 @@ import heroImage from '../assets/image.jpg?url';
     <title>koan playground</title>
   </head>
   <body>
-    <main class="main">
+    <main id="top" class="main jump-links">
       <Section
         bgColor="dark"
       >
@@ -22,6 +23,7 @@ import heroImage from '../assets/image.jpg?url';
             <NavItem uri="https://sleepingmonk.github.io/koan/" label="Documentation" external={true}/>
             <NavItem uri="https://bionic.studio" label="Bionic Studio" external={true}/>
             <NavItem uri="#" label="#home" />
+            <NavItem uri="#jump" label="Jump" />
           </Nav>
         </Header>
       </Section>
@@ -189,7 +191,28 @@ import heroImage from '../assets/image.jpg?url';
           </div>
         </div>
       </Section>
+      <Section
+        id="jump"
+        heading="Jump Links"
+        level="2"
+        bgColor="primary"
+      >
+        <div class="center stack">
+          <p>Jump Links jump to different sections of the page.</p>
+          <p>Add a <code>jump-links</code> class to any element that contains one or more <code>{`<a></a>`}</code> elements you want to make jump links. The <code>a</code> elements should have <code>href</code> attributes pointing to the target sections using <code>#id</code>.</p>
+          <p>Add the following script to initialize the jump links:</p>
+          <pre><code>{`<script>
+  import { initJumpLinks } from 'koan-astro';
+  initJumpLinks();
+</script>`}</code></pre>
+          <NavItem uri="#top" label="Top" />
+        </div>
+      </Section>
       <Footer />
     </main>
   </body>
+  <script>
+    import { initJumpLinks } from 'koan-astro';
+    initJumpLinks();
+  </script>
 </html>

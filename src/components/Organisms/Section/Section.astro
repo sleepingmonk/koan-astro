@@ -12,6 +12,7 @@ interface Props {
   buttonExternal?: boolean;
   className?: string;
   contentBox?: boolean;
+  id?: string;
 }
 
 import './Section.css';
@@ -30,7 +31,8 @@ const {
   buttonLabel,
   buttonExternal = false,
   className,
-  contentBox = true
+  contentBox = true,
+  id
 } = Astro.props;
 
 const variant_justify = justify
@@ -50,7 +52,7 @@ const hAttributes = {
 const classes = `section ${variant_justify} ${variant_align} ${variant_color} ${className}`;
 ---
 
-<div class={classes}>
+<div id={id} class={classes}>
   {bgImage ? (
     <div class="section__image" style={`--background-image: url(${bgImage});`}></div>
     <div class="section__tint"></div>

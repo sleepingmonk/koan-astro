@@ -5,6 +5,7 @@
   "type": "module",
   "files": [
     "src/index.ts",
+    "src/js",
     "src/components",
     "src/assets",
     "src/styles",
@@ -12,6 +13,7 @@
   ],
   "exports": {
     ".": "./src/index.ts",
+    "./js/*": "./src/js/*",
     "./components/*": "./src/components/*",
     "./assets/icons.svg": "./src/assets/icons.svg",
     "./styles/*": "./src/styles/*",
