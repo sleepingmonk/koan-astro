@@ -2,7 +2,7 @@
 import '../styles/layout-primitives.css';
 import '../styles/scheme-default.css';
 import '../styles/elements.css';
-import { Button, Card, Footer, Header, Nav, NavItem, Section } from '../index';
+import { Button, Card, Footer, Header, Nav, NavItem, Section, Modal } from '../index';
 import heroImage from '../assets/image.jpg?url';
 
 ---
@@ -49,6 +49,26 @@ import heroImage from '../assets/image.jpg?url';
         level="2"
         bgColor="light"
       >
+        <Modal
+          variant="default"
+        >
+          <span slot='trigger'>
+            Open Modal
+          </span>
+          <Section>
+            <p>This is a modal.</p>
+          </Section>
+        </Modal>
+        <Modal
+          variant="bar"
+        >
+          <span slot='trigger'>
+            Open Modal With Bar
+          </span>
+          <Section>
+            <p>This is a modal with a bar.</p>
+          </Section>
+        </Modal>
         <div class="container stack">
           <h2>Buttons</h2>
           <div class="cluster">
@@ -144,7 +164,7 @@ import heroImage from '../assets/image.jpg?url';
         </div>
         <div class="container stack">
           <h2>Cards</h2>
-          <div class="grid" style="--grid-min-width: 20ch; --bg-color: var(--color-dark);">
+          <div class="grid" style="--grid-min-width: 25ch; --bg-color: var(--color-dark);">
             <Card
               variant="media"
               heading="Media"

@@ -1,0 +1,40 @@
+---
+import "./Modal.css";
+
+interface Props {
+  variant?: string;
+}
+
+const { variant = "default" } = Astro.props;
+---
+
+<div class="koan-modal">
+  <a class="koan-modal__trigger">
+    <slot name="trigger" />
+  </a>
+  <dialog class="koan-modal__dialog">
+    <div class="koan-modal__dialog-inner">
+      <div class="koan-modal__content">
+        <slot />
+      </div>
+      {variant === "bar" ? (
+        <div class="koan-modal__bar">
+          <form method="dialog"><button class="koan-modal__close" aria-label="Close">
+            <span class="koan-modal__close-line"></span>
+            <span class="koan-modal__close-line"></span>
+          </button></form>
+        </div>
+      ) : (
+        <form method="dialog"><button class="koan-modal__close" aria-label="Close">
+          <span class="koan-modal__close-line"></span>
+          <span class="koan-modal__close-line"></span>
+        </button></form>
+      )}
+    </div>
+  </dialog>
+</div>
+
+<script>
+  import { setupModal } from './Modal.js';
+  setupModal();
+</script>

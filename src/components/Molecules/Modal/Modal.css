@@ -1,0 +1,68 @@
+.koan-modal__dialog {
+  --close-border-color: var(--color-dark);
+  --close-background-color: var(--color-accent);
+  --close-foreground-color: var(--color-dark);
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--color-light);
+  border-right-color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: 0;
+}
+
+.koan-modal__dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.koan-modal__dialog-inner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.koan-modal form {
+  display: flex;
+}
+
+.koan-modal__bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--s-3);
+  background-color: var(--color-light);
+  border: 0px solid var(--color-dark);
+  border-bottom-width: 2px;
+}
+
+.koan-modal__close {
+  position: relative;
+  block-size: var(--s0);
+  inline-size: var(--s0);
+  border: 2px solid var(--close-border-color);
+  background-color: var(--close-background-color);
+  padding: 0;
+  cursor: pointer;
+
+  .koan-modal__close-line {
+    position: absolute;
+    left: 12%;
+    top: calc(50% - 1px);
+    inline-size: 80%;
+    block-size: 2px;
+    background-color: var(--close-foreground-color);
+    transform: rotate(45deg);
+  }
+  .koan-modal__close-line:last-child {
+    transform: rotate(-45deg);
+  }
+}
+
+.koan-modal__dialog-inner > form > .koan-modal__close {
+  position: absolute;
+  z-index: 1000;
+  top: var(--s-6);
+  right: var(--s-6);
+  inline-size: var(--s1);
+  block-size: var(--s1);
+  border-radius: 50%;
+}

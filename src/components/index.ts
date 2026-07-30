@@ -4,6 +4,7 @@ export { default as Logo } from './Atoms/Logo/Logo.astro';
 export { default as NavItem } from './Atoms/NavItem/NavItem.astro';
 export { default as Card } from './Molecules/Card/Card.astro';
 export { default as DropCluster } from './Molecules/DropCluster/DropCluster.astro';
+export { default as Modal } from './Molecules/Modal/Modal.astro';
 export { default as Nav } from './Molecules/Nav/Nav.astro';
 export { default as Cards } from './Organisms/Cards/Cards.astro';
 export { default as Footer } from './Organisms/Footer/Footer.astro';
