@@ -1,6 +1,11 @@
 .drop-cluster {
   --gap: var(--s0);
   --block-size: calc(var(--gap) * var(--ratio));
+  inline-size: 100%;
+
+  > label {
+    inline-size: 100%;
+  }
 }
 
 .drop-cluster__inner,
