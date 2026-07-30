@@ -9,9 +9,9 @@ const { variant = "default" } = Astro.props;
 ---
 
 <div class="koan-modal">
-  <a class="koan-modal__trigger">
+  <span class="koan-modal__trigger">
     <slot name="trigger" />
-  </a>
+  </span>
   <dialog class="koan-modal__dialog">
     <div class="koan-modal__dialog-inner">
       <div class="koan-modal__content">

@@ -1,3 +1,8 @@
+.koan-modal__trigger {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .koan-modal__dialog {
   --close-border-color: var(--color-dark);
   --close-background-color: var(--color-accent);
