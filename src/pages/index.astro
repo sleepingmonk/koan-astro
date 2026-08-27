@@ -47,7 +47,7 @@ import heroImage from '../assets/image.jpg?url';
         brow="Brow"
         heading="Heading"
         level="2"
-        bgColor="light"
+        bgColor="base"
       >
         <Modal
           variant="default"
@@ -165,7 +165,55 @@ import heroImage from '../assets/image.jpg?url';
         </div>
         <div class="container stack">
           <h2>Cards</h2>
-          <div class="grid" style="--grid-min-width: 25ch; --bg-color: var(--color-dark);">
+          <div class="grid" style="--grid-min-width: 25ch;">
+            <Card
+              scheme="inherit"
+              heading="inherit"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This card inherits it's color scheme.</p>
+            </Card>
+            <Card
+              scheme="light"
+              heading="light"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a light scheme.</p>
+            </Card>
+            <Card
+              scheme="dark"
+              heading="dark"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a dark scheme.</p>
+            </Card>
+            <Card
+              scheme="base"
+              heading="base"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a base scheme.</p>
+            </Card>
+            <Card
+              scheme="primary"
+              heading="primary"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a primary scheme.</p>
+            </Card>
+            <Card
+              scheme="accent"
+              heading="accent"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a accent scheme.</p>
+            </Card>
             <Card
               variant="media"
               heading="Media"
@@ -198,6 +246,8 @@ import heroImage from '../assets/image.jpg?url';
             <Card
               variant="media-right"
               heading="Media Right"
+              buttonHref="#"
+              buttonLabel="Click Me"
             >
               <img src={heroImage} alt="Example image" slot="media" />
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</p>

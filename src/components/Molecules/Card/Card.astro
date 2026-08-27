@@ -6,6 +6,7 @@ import defaultIconsUrl from '../../../assets/icons.svg?url';
 
 interface Props {
   variant?: string;
+  scheme?: string;
   buttonHref?: string;
   buttonLabel?: string;
   buttonExternal?: boolean;
@@ -14,9 +15,11 @@ interface Props {
   bgImage?: string;
   icon?: string;
   iconsUrl?: string;
+  className?: string;
+  id?: string;
 }
 
-const { variant, buttonHref = "", buttonLabel = "", buttonExternal = false, heading = "", h: Hlevel = "h3", bgImage = "", icon = "", iconsUrl = defaultIconsUrl } = Astro.props;
+const { variant, scheme = "inherit", buttonHref = "", buttonLabel = "", buttonExternal = false, heading = "", h: Hlevel = "h3", bgImage = "", icon = "", iconsUrl = defaultIconsUrl, className = "", id = ""} = Astro.props;
 
 const iconPath = icon ? `${iconsUrl}#${icon}` : "";
 
@@ -29,10 +32,10 @@ const backgroundProperties = {
   style: `--background-image: url(${bgImage});`
 }
 const variant_class = variant ? `card--${variant}` : 'card--default';
-const classes = `card ${variant_class}`;
+const classes = `card ${variant_class} scheme--${scheme} ${className || ""}`;
 ---
 
-<CardTag class={classes} { ...cardProperties } title={buttonLabel}>
+<CardTag id={id || undefined} class={classes} { ...cardProperties } title={buttonLabel || undefined}>
   <div class="switcher">
     {variant?.includes("icon") && icon ? (
       <div class="card__icon">

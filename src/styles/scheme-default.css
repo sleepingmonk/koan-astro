@@ -64,14 +64,16 @@
 
   /* Contextual variable: can be overridden at the component level to affect accent elements within. */
 
-  --bg: var(--color-light);
-  --heading-color: var(--color-primary-dark-xx);
-  --accent-color: var(--color-primary-dark-x);
-  --color: var(--color-dark);
-  --button-fg: var(--bg);
-  --button-bg: var(--accent-color);
-  --border-thin: 1px;
   --border-normal: 2px;
+  --border-thin: 1px;
+  --border-radius: var(--s-3);
+
+  --accent-color: var(--color-dark);
+  --bg-color: var(--color-base);
+  --button-bg: var(--color-accent);
+  --button-fg: var(--bg-color);
+  --color: var(--color-light);
+  --heading-color: var(--color-dark);
 }
 
 /* The only media query used simply bumps the base size of our modular scale for larger screens. */
@@ -82,3 +84,48 @@
   }
 }
 
+/* Color Scheme Utility Classes */
+.scheme--light {
+  --bg-color: var(--color-light);
+  --heading-color: var(--color-primary-dark-xx);
+  --accent-color: var(--color-primary-dark-x);
+  --color: var(--color-dark);
+  --button-fg: var(--bg-color);
+  --button-bg: var(--accent-color);
+}
+
+.scheme--dark {
+  --bg-color: var(--color-dark);
+  --heading-color: var(--color-accent-dark-xx);
+  --accent-color: var(--color-accent-dark-x);
+  --color: var(--color-light);
+  --button-fg: var(--bg-color);
+  --button-bg: var(--accent-color);
+}
+
+.scheme--base {
+  --bg-color: var(--color-base);
+  --heading-color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-x);
+  --color: var(--color-dark);
+  --button-fg: var(--bg-color);
+  --button-bg: var(--accent-color);
+}
+
+.scheme--primary {
+  --bg-color: var(--color-primary);
+  --heading-color: var(--color-light);
+  --accent-color: var(--color-accent);
+  --color: var(--color-light);
+  --button-fg: var(--bg-color);
+  --button-bg: var(--accent-color);
+}
+
+.scheme--accent {
+  --bg-color: var(--color-accent);
+  --heading-color: var(--color-dark);
+  --accent-color: var(--color-primary-dark-x);
+  --color: var(--color-dark);
+  --button-fg: var(--bg-color);
+  --button-bg: var(--accent-color);
+}
