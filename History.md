@@ -1,4 +1,14 @@
 
+v1.0.0 / 2026-08-27
+===================
+- BREAKING CHANGES to Section and Card components. Review implementation.
+- fix: Add improved histlog script and release process.
+- fix: Improved color scheme implementation for Section component.
+- feat: Add scheme utility classes and update Card component to use it.
+
+ 11 files changed, 362 insertions(+), 196 deletions(-)
+
+
   2 files changed, 7 insertions(+), 2 deletions(-)
 
   6 files changed, 177 insertions(+), 3 deletions(-)
@@ -39,6 +49,6 @@ v0.1.4 / 2026-06-14
 
 
 
- 
 
- 
+
+
