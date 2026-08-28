@@ -1,4 +1,12 @@
 
+v1.0.2 / 2026-08-27
+===================
+
+- fix: Section padding for same color siblings, for new .scheme classes.
+
+ 3 files changed, 18 insertions(+), 18 deletions(-)
+
+
 v1.0.1 / 2026-08-27
 ===================
 
