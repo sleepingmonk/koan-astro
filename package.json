@@ -28,8 +28,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
+    "histlog": "sh ./scripts/histlog.sh",
     "prepack": "npm run check && npm run build",
-    "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  histlog (to capture git stat for this release)' && echo '  npm version [major|minor|patch]' && echo '  npm publish'"
+    "preversion": "npm run check && npm run build",
+    "version": "npm run histlog && git add History.md",
+    "postversion": "if [ \"$SKIP_PUBLISH\" = \"1\" ]; then echo 'Skipping publish/push (SKIP_PUBLISH=1)'; else npm publish && git push --follow-tags; fi",
+    "release:test": "SKIP_PUBLISH=1 npm version prerelease --preid=rc",
+    "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  npm version [major|minor|patch]'"
   },
   "peerDependencies": {
     "astro": "^5.0.0 || ^6.0.0"
