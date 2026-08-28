@@ -1,11 +1,11 @@
 ---
 interface Props {
+  scheme?: string;
   justify?: string;
   align?: string;
   brow?: string;
 	heading?: string;
   bgImage?: string;
-  bgColor?: string;
   level?: string;
   buttonHref?: string;
   buttonLabel?: string;
@@ -25,7 +25,7 @@ const {
   brow,
   heading,
   bgImage,
-  bgColor,
+  scheme = "default",
   level = "2",
   buttonHref,
   buttonLabel,
@@ -41,9 +41,9 @@ const variant_justify = justify
 const variant_align = align
   ? `section--align-${align}`
   : "section--align-center";
-const variant_color = bgColor
-  ? `section--color-${bgColor}`
-  : "section--color-default";
+const variant_color = scheme
+  ? `scheme--${scheme}`
+  : "scheme--default";
 const Hlevel = "h" + level;
 const hAttributes = {
   class: "section__heading"

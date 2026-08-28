@@ -1,8 +1,4 @@
 .section {
-  --color: var(--color-dark);
-  --heading-color: var(--color-primary-dark-x);
-  --button-fg: var(--accent-color);
-  --button-bg: var(--bg-color);
   --line-height: 1.5;
   position: relative;
   display: grid;
@@ -82,11 +78,6 @@
   border-color: var(--color);
 }
 
-.section a {
-  color: var(--color);
-  text-decoration: none;
-}
-
 /* Variants */
 
 .section--align-center .section__header,
@@ -103,146 +94,26 @@
   align-items: flex-end;
 }
 
-.section--color-default,
-.section--color-light {
-  --bg-color: var(--color-light);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-dark {
-  --bg-color: var(--color-dark);
-  --color: var(--color-light);
-  --accent-color: var(--color-accent);
-  --heading-color: var(--color-light);
-}
-
-.section--color-base {
-  --bg-color: var(--color-base);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-xx);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-base-light-x {
-  --bg-color: var(--color-base-light-x);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-x);
-  --heading-color: var(--color-base-dark-xx);
-}
-
-.section--color-base-light-xx {
-  --bg-color: var(--color-base-light-xx);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary);
-  --heading-color: var(--color-base-dark-x);
-}
-
-.section--color-base-dark-x {
-  --bg-color: var(--color-base-dark-x);
-  --color: var(--color-base-light-xx);
-  --accent-color: var(--color-accent);
-  --heading-color: var(--color-base-light-xx);
-}
-
-.section--color-base-dark-xx {
-  --bg-color: var(--color-base-dark-xx);
-  --color: var(--color-base-light-x);
-  --accent-color: var(--color-accent);
-  --heading-color: var(--color-base-light-x);
-}
-
-.section--color-primary {
-  --bg-color: var(--color-primary);
-  --color: var(--color-primary-light-xx);
-  --accent-color: var(--color-dark);
-  --heading-color: var(--color-primary-light-xx);
-}
-
-.section--color-primary-light-x {
-  --bg-color: var(--color-primary-light-x);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-xx);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-primary-light-xx {
-  --bg-color: var(--color-primary-light-xx);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-x);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-primary-dark-x {
-  --bg-color: var(--color-primary-dark-x);
-  --color: var(--color-primary-light-xx);
-  --accent-color: var(--color-accent);
-  --heading-color: var(--color-primary-light-xx);
-}
-
-.section--color-primary-dark-xx {
-  --bg-color: var(--color-primary-dark-xx);
-  --color: var(--color-primary-light-xx);
-  --accent-color: var(--color-accent);
-  --heading-color: var(--color-primary-light-xx);
-}
-
-.section--color-accent {
-  --bg-color: var(--color-accent);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-xx);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-accent-light-x {
-  --bg-color: var(--color-accent-light-x);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-xx);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-accent-light-xx {
-  --bg-color: var(--color-accent-light-xx);
-  --color: var(--color-dark);
-  --accent-color: var(--color-primary-dark-x);
-  --heading-color: var(--color-dark);
-}
-
-.section--color-accent-dark-x {
-  --bg-color: var(--color-accent-dark-x);
-  --color: var(--color-light);
-  --accent-color: var(--color-accent-light-xx);
-  --heading-color: var(--color-light);
-}
-
-.section--color-accent-dark-xx {
-  --bg-color: var(--color-accent-dark-xx);
-  --color: var(--color-light);
-  --accent-color: var(--color-accent-light-x);
-  --heading-color: var(--color-light);
-}
-
 /* Drop padding when two sections of the same background are touching. */
-.section--color-default + .section--color-default > *,
-.section--color-default + .section--color-light > *,
-.section--color-light + .section--color-default > *,
-.section--color-light + .section--color-light > *,
-.section--color-dark + .section--color-dark > *,
-.section--color-base + .section--color-base > *,
-.section--color-base + .section--color-base-light-x > *,
-.section--color-base + .section--color-base-light-xx > *,
-.section--color-base + .section--color-base-dark-x > *,
-.section--color-base + .section--color-base-dark-xx > *,
-.section--color-primary + .section--primary > *,
-.section--color-primary + .section--primary-light-x > *,
-.section--color-primary + .section--primary-light-xx > *,
-.section--color-primary + .section--primary-dark-x > *,
-.section--color-primary + .section--primary-dark-xx > *,
-.section--color-accent + .section--accent > *,
-.section--color-accent + .section--accent-light-x > *,
-.section--color-accent + .section--accent-light-xx > *,
-.section--color-accent + .section--accent-dark-x > *,
-.section--color-accent + .section--accent-dark-xx > * {
+.section.scheme--default + .section.scheme--default > *,
+.section.scheme--default + .section.scheme--light > *,
+.section.scheme--light + .section.scheme--default > *,
+.section.scheme--light + .section.scheme--light > *,
+.section.scheme--dark + .section.scheme--dark > *,
+.section.scheme--base + .section.scheme--base > *,
+.section.scheme--base + .section.scheme--base-light-x > *,
+.section.scheme--base + .section.scheme--base-light-xx > *,
+.section.scheme--base + .section.scheme--base-dark-x > *,
+.section.scheme--base + .section.scheme--base-dark-xx > *,
+.section.scheme--primary + .section--primary > *,
+.section.scheme--primary + .section--primary-light-x > *,
+.section.scheme--primary + .section--primary-light-xx > *,
+.section.scheme--primary + .section--primary-dark-x > *,
+.section.scheme--primary + .section--primary-dark-xx > *,
+.section.scheme--accent + .section--accent > *,
+.section.scheme--accent + .section--accent-light-x > *,
+.section.scheme--accent + .section--accent-light-xx > *,
+.section.scheme--accent + .section--accent-dark-x > *,
+.section.scheme--accent + .section--accent-dark-xx > * {
   padding-top: 0;
 }

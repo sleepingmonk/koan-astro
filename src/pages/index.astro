@@ -16,7 +16,7 @@ import heroImage from '../assets/image.jpg?url';
   <body>
     <main id="top" class="main jump-links">
       <Section
-        bgColor="dark"
+        scheme="dark"
       >
         <Header variant="overlay" measure="100%">
           <Nav>
@@ -32,7 +32,7 @@ import heroImage from '../assets/image.jpg?url';
         heading="Koan for Astro"
         level="1"
         bgImage={heroImage}
-        bgColor="accent"
+        scheme="accent"
       >
         <div class="center" style="display: flex; justify-content: center; align-items: center;">
           <Card
@@ -47,7 +47,7 @@ import heroImage from '../assets/image.jpg?url';
         brow="Brow"
         heading="Heading"
         level="2"
-        bgColor="base"
+        scheme=""
       >
         <Modal
           variant="default"
@@ -55,8 +55,10 @@ import heroImage from '../assets/image.jpg?url';
           <span slot='trigger'>
             Open Modal
           </span>
-          <Section>
-            <p>This is a modal.</p>
+          <Section
+            scheme="dark"
+          >
+            <p>This is a modal with dark color scheme.</p>
           </Section>
         </Modal>
         <Modal
@@ -65,8 +67,10 @@ import heroImage from '../assets/image.jpg?url';
           <span slot='trigger'>
             Open Modal With Bar
           </span>
-          <Section>
-            <p>This is a modal with a bar.</p>
+          <Section
+            scheme="accent"
+          >
+            <p>This is a modal with a bar and accent color scheme.</p>
           </Section>
         </Modal>
         <a href="#jump">Jump to Jump Links</a>
@@ -172,15 +176,7 @@ import heroImage from '../assets/image.jpg?url';
               buttonHref="#"
               buttonLabel="Click Me"
             >
-              <p>This card inherits it's color scheme.</p>
-            </Card>
-            <Card
-              scheme="light"
-              heading="light"
-              buttonHref="#"
-              buttonLabel="Click Me"
-            >
-              <p>This is a card in a light scheme.</p>
+              <p>This card inherits its color scheme.</p>
             </Card>
             <Card
               scheme="dark"
@@ -189,6 +185,14 @@ import heroImage from '../assets/image.jpg?url';
               buttonLabel="Click Me"
             >
               <p>This is a card in a dark scheme.</p>
+            </Card>
+            <Card
+              scheme="light"
+              heading="light"
+              buttonHref="#"
+              buttonLabel="Click Me"
+            >
+              <p>This is a card in a light scheme.</p>
             </Card>
             <Card
               scheme="base"
@@ -266,7 +270,7 @@ import heroImage from '../assets/image.jpg?url';
         id="jump"
         heading="Jump Links"
         level="2"
-        bgColor="primary"
+        scheme="primary"
       >
         <div class="center stack">
           <p>Jump Links jump to different sections of the page.</p>
