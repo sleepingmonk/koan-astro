@@ -1,7 +1,7 @@
 {
   "name": "koan-astro",
   "version": "1.0.1",
-  "description": "Reusable Astro component templates.",
+  "description": "Composable Astro component templates.",
   "type": "module",
   "files": [
     "src/index.ts",
