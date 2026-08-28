@@ -1,4 +1,16 @@
 
+v1.0.1 / 2026-08-27
+===================
+
+- fix: Minor style fixes for .box, .cover, .drop-cluster.
+- 1.0.0
+- fix: Add improved histlog script and release process.
+- fix: Improved color scheme implementation for Section component.
+- feat: Add scheme utility classes and update Card component to use it.
+
+ 14 files changed, 377 insertions(+), 201 deletions(-)
+
+
 v1.0.0 / 2026-08-27
 ===================
 - BREAKING CHANGES to Section and Card components. Review implementation.
