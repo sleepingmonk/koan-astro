@@ -34,7 +34,7 @@
     "version": "npm run histlog && git add History.md",
     "postversion": "if [ \"$SKIP_PUBLISH\" = \"1\" ]; then echo 'Skipping publish/push (SKIP_PUBLISH=1)'; else npm publish && git push --follow-tags; fi",
     "release:test": "SKIP_PUBLISH=1 npm version prerelease --preid=rc",
-    "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  npm version [major|minor|patch]'"
+    "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  npm version [major|minor|patch]' && echo '  ***** MAKE SURE YOU ARE LOGGED IN WITH npm login | Current User: ' && npm whoami"
   },
   "peerDependencies": {
     "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
