@@ -1,4 +1,12 @@
 
+v1.0.3-rc.0 / 2026-10-17
+========================
+
+- feat: Add Astro ^7 support.
+
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+
 v1.0.2 / 2026-08-27
 ===================
 
