@@ -37,7 +37,7 @@
     "dry": "npm pack --dry-run && echo 'Dry run complete. No files were actually packed.' && echo 'If everything looks good:' && echo '  npm version [major|minor|patch]'"
   },
   "peerDependencies": {
-    "astro": "^5.0.0 || ^6.0.0"
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
   },
   "devDependencies": {
     "astro": "^6.4.7",
