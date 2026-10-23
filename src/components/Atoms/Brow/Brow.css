@@ -1,6 +1,8 @@
 .brow {
   display: flex;
   gap: var(--gap, var(--s0));
+   /* @todo: This is a "temporary" fix that compensates when .brow is in a .stack. | .stack > *: inline-size: 100%; */
+  inline-size: auto;
 }
 
 .brow .brow__accent {

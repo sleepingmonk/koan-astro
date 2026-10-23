@@ -180,7 +180,7 @@
 
 .card--scheme-accent {
   --bg-color: var(--color-accent);
-  --accent-color: var(--color-secondary);
+  --accent-color: var(--color-primary);
   --color: var(--color-dark);
   --heading-color: var(--accent-color);
 }
