@@ -11,8 +11,23 @@
     "src/styles",
     "README.md"
   ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": "./src/index.ts",
+    "./Button": "./src/components/Atoms/Button/Button.astro",
+    "./Brow": "./src/components/Atoms/Brow/Brow.astro",
+    "./Logo": "./src/components/Atoms/Logo/Logo.astro",
+    "./NavItem": "./src/components/Atoms/NavItem/NavItem.astro",
+    "./Card": "./src/components/Molecules/Card/Card.astro",
+    "./DropCluster": "./src/components/Molecules/DropCluster/DropCluster.astro",
+    "./Modal": "./src/components/Molecules/Modal/Modal.astro",
+    "./Nav": "./src/components/Molecules/Nav/Nav.astro",
+    "./Cards": "./src/components/Organisms/Cards/Cards.astro",
+    "./Footer": "./src/components/Organisms/Footer/Footer.astro",
+    "./Header": "./src/components/Organisms/Header/Header.astro",
+    "./Section": "./src/components/Organisms/Section/Section.astro",
     "./js/*": "./src/js/*",
     "./components/*": "./src/components/*",
     "./assets/icons.svg": "./src/assets/icons.svg",
