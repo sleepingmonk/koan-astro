@@ -1,4 +1,14 @@
 
+v1.1.0 / 2026-10-23
+===================
+
+- feat: Add individual component export paths to allow consumers to be specific about what CSS gets loaded via components.
+- fix: Minor fixes.
+- chore: Add dry run reminder to log in to npmjs.
+
+ 4 files changed, 22 insertions(+), 5 deletions(-)
+
+
 v1.0.4 / 2026-10-17
 ===================
 
